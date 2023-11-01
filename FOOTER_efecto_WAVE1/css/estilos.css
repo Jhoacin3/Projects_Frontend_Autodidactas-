@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+}
+body{
+    background-color: rgb(143, 214, 214);
+}
+
+:root{
+    --color-esqueleto:#99c3d7;
+}
+
+header{
+    width: 100%;
+    height: 60px;
+    background: var(--color-esqueleto);
+}
+
+.cover{
+    width: 100%;
+    height: 500px;
+    background: var(--color-esqueleto);
+    margin-top: 20px;
+}
+
+.container__article{
+    max-width: 1000px;
+    padding: 0px 20px;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container__article .box__article{
+    width: 200px;
+    height: 250px;
+    background: var(--color-esqueleto);
+    margin: 20px;
+}
+/* viene el footer */
+footer{
+    width: 100%;
+    padding: 50px 0px;
+    background-image: url(../image/background-footer1.svg);
+    background-size: cover;
+    /* animatio llamada wave, con 10 segundos de rapidez (menos mas rapido) que sea lineal y que sea infinita */
+    animation: wave 10s linear infinite;
+    overflow: hidden;
+    
+}
+@keyframes wave{
+    /* cuando nuestra animacion este comenzando (0%)
+     en el background-position-x (posicion x) sea de 0*/
+    0%{
+        background-position-x: 0;
+    }
+    /* ahora cuando nuestra animacion este terminada (100%)
+     este, esté en 1000px */
+    100%{
+        background-position-x: 1000px;
+    }
+}
+
+.container__footer{
+    /* es para que se pongan delado de la otra RESPONSIVE */
+    display: flex;
+     /* Para decirle que si no entran, que se pongan una encima de la otra RESPONSIVE*/
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* cambiamos el max de 1200px por este */
+    max-width: 1200px;
+    margin: auto;
+    /* para mover los box mas abajo de la imagen */
+    margin-top: 100px;
+}
+.box__footer{
+    /* para que sus elementos se pongan uno deajo del otro */
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+.box__footer .logo img{
+    width: 150px;
+    margin-top:-70px ;
+}
+.box__footer .term{
+    /* aqui estamos diciendo que las letras lorem se encojan a un ancho del que esta
+    ahora y no se alarge */
+    max-width: 350px;
+    /* aqui en margin lo separamos tantito del logo */
+    margin-top: 20px;
+    font-weight: 500;
+    color: #7a7a7a;
+    /* para el tamaño del lorem */
+    font-size: 18px;
+}
+.box__footer h2{
+    /* para espaciar entre el titulo y los links de abajo */
+    margin-bottom: 30px;
+    color: #343434;
+    /* grosor del h2 */
+    font-weight: 700;
+}
+.box__footer a{
+    margin-top: 10px;
+    color: #7a7a7a;
+    font-weight: 600;
+}
+.box__footer a:hover{
+    opacity: 0.8;
+}
+.box__footer a .fab{
+    font-size: 20px;
+}
+.box__copyright{
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 40px;
+}
+.box__copyright p{
+    margin-top: 20px;
+    color: #7a7a7a;
+}
+.box__copyright hr{
+    border: none;
+    height: 1px;
+    background-color: #7a7a7a;
+}

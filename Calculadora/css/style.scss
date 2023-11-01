@@ -1,0 +1,138 @@
+*{
+    padding: 0;
+    margin: 0;
+    // para que todas las medidas sean exactas
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+h1{
+    text-align: center;
+}
+.title{
+    width: 100%;
+
+    background: #9780f2;
+}
+body{
+    background: linear-gradient(100deg,#39c6f1,#d6edf4);
+}
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // wrap= para que se comporte de forma de forma automatica, ya sea que este en cel, compu, etc.
+    flex-wrap: wrap;
+}
+.calculator{
+    position: relative;
+    height: auto;
+    width: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgb(187, 130, 130);
+    background-color: #fff;
+    #display{
+        color: #08084f;
+        margin: 0 10px;
+        height: 100px;
+        width: auto;
+        display: flex;
+        //de arriba abajo quiero que este flexible (flex) pero abajo (end)
+        align-items: flex-end;
+        // De izquierda a derecha quiero que este flexible (flex) pero que este a la derecha final (end)
+        justify-content: flex-end;
+        font-size: 30px;
+        // Para separar de la linea de abajo
+        margin-bottom: 30px;
+        font-weight: 600;
+    }
+    #equal{
+        height: 130px;
+    }
+    #clear{
+        background-color: #ffd5d8;
+        color: #f139c0;
+    }
+    .btn-number{
+        background-color: #c3eaff;
+        color: #000000;
+
+    }
+    .btn-operator{
+        background-color: #ffd0fb;
+        color: #f967f3;
+    }
+    .btn-equal{
+        background-color: #adf9e7;
+        color: #000;
+    }
+    // PARA  NO REPETIR container dark (ya que se le dio propiedades arriba) se le coloca &
+    &.dark{
+     background-color: #1B1B1B;
+     #display{
+        color: #daf1f1;
+     }
+     #clear{
+        background-color: #4C35AA;
+        color: white;
+     }
+     .btn-number{
+        background-color: #8EFDA6;
+        color: black;
+        font-weight: 600;
+     }
+     .btn-operator{
+        background-color: #F0DB4F;
+        color: #aa00a4;
+     }
+     .btn-equal{
+        background-color: #F23B00;
+        color: white;
+     }
+    
+    }
+}
+.theme-toggler{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1;
+    &::before{
+        
+        content: '';
+        position: absolute;
+        height: 30px;
+        width: 30px;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background-color: #333;
+        z-index: -1;
+    }
+}
+.theme-toggler.active{
+    color: #333;
+    &::before{
+        background-color: #fff;
+    }
+}
+button{
+    // tamaño cuadrado 
+    height: 60px;
+    width: 60px;
+    border: 0;
+    border-radius: 40%;
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    &:hover{
+        transform: scale(1.1);
+    }
+
+}
+
