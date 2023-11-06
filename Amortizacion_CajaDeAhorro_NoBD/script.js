@@ -54,13 +54,14 @@ shiftTabs(activeLink.id);
 const nombres = [];
 const CURPs = [];
 const abonos = [];
-const acciones = [];
+const AccionesHistorial = [];
 let banderin = false;
 // BOTONES
 const btnAgregar = document.getElementById("btnAgregar");
 const btnAbonar = document.getElementById("btnAbonar");
 const btnRetirar = document.getElementById("btnRetirar");
 const btnCredito = document.getElementById("btnCredito");
+const btnAcciones = document.getElementById("btnAcciones");
 // INPUTS INGRESAR
 const nombreInput = document.getElementById("nombre");
 const CURPInput = document.getElementById("CURP");
@@ -74,6 +75,21 @@ const CURP_RetirarInput = document.getElementById("CURP_Retirar");
 // INPUTS CREDITO
 const CURP_CreditoInput = document.getElementById("CreditoCURP");
 const Monto_CreditoInput = document.getElementById("Credito");
+// INPUTS ACCIONES
+const AccionesCURPInput = document.getElementById("AccionesCURP");
+// FUNCIONES
+function agregarRegistroHistorial(CURP, tipoAccion, monto) {
+  const fecha = new Date(); // Obtener la fecha actual
+  AccionesHistorial.push({
+    CURP,
+    tipoAccion,
+    monto,
+    fecha
+  });
+}
+
+//TABLAS IDs
+//analizar si es este para tablas
 
 // **********LOGICA**********
 // Seccion Agregar
@@ -105,25 +121,28 @@ btnAbonar.addEventListener("click", function() {
   const AbonarCuenta = parseFloat(AbonarCuentaInput.value);
   const Curp_Abonar = Curp_AbonarInput.value;
 
- for (let i = 0; i <CURPs.length; i++) {
-  if (Curp_Abonar === CURPs[i]) {
-    abonos[i] += AbonarCuenta; // Agregar el monto al abono existente
-    banderin = true;
-    break;
+  for (let i = 0; i < CURPs.length; i++) {
+    if (Curp_Abonar === CURPs[i]) {
+      abonos[i] += AbonarCuenta; // Agregar el monto al abono existente
+      banderin = true;
+      break;
+    }
   }
-  
+
   if (banderin) {
+    agregarRegistroHistorial(Curp_Abonar, "Abono", AbonarCuenta);
     AbonarCuentaInput.value = "";
     Curp_AbonarInput.value = "";
   } else {
-    alert("El usuario con la CURP: " + AbonarCuenta + " no está en el sistema.");
+    alert("El usuario con la CURP: " + Curp_Abonar + " no está en el sistema.");
   }
-  
- }
- console.log(nombres);
- console.log(CURPs);
- console.log(abonos);
+
+  console.log(nombres);
+  console.log(CURPs);
+  console.log(abonos);
+  console.log(AccionesHistorial);
 });
+
 // Seccion Retirar
 btnRetirar.addEventListener("click", function () {
     // Obtener el valor del input
@@ -132,43 +151,73 @@ btnRetirar.addEventListener("click", function () {
     for (let i = 0; i < CURPs.length; i++) {
       if (CURP_Retirar === CURPs[i]) {
         abonos[i] -= RetirarCuenta;
-        break;
         banderin = true;
+        break;
       }
 
-      if (banderin) {
-        RetirarCuentaInput.value = "";
-        CURP_RetirarInput.value = "";
+      
+    }
+    if (banderin) {
+      agregarRegistroHistorial(CURP_Retirar, "Retiro", RetirarCuenta);
+      RetirarCuentaInput.value = "";
+      CURP_RetirarInput.value = "";
 
-      } else {
-        alert("El usuario con la CURP: " + CURP_Retirar + " no está en el sistema.");
+    } else {
+      alert("El usuario con la CURP: " + CURP_Retirar + " no está en el sistema.");
 
-        
-      }
       
     }
     console.log(nombres);
     console.log(CURPs);
     console.log(abonos);
-});
-
-btnCredito.addEventListener("click", function() {
-  const CURP_Credito = CURP_CreditoInput.value;
-  const Monto_Credito = parseFloat(Monto_CreditoInput.value);
-  for (let i = 0; i < CURPs.length; i++) {
+    console.log(AccionesHistorial);
+  });
+  
+  btnCredito.addEventListener("click", function() {
+    const CURP_Credito = CURP_CreditoInput.value;
+    const Monto_Credito = parseFloat(Monto_CreditoInput.value);
+    for (let i = 0; i < CURPs.length; i++) {
       if (CURP_Credito === CURPs[i] && Monto_Credito <= abonos[i]*2) {
         banderin = true;
         break;
       }
-  }
+    }
   if (banderin) {
     alert("Crédito aprobado para el usuario con CURP: " + CURP_Credito);
+    agregarRegistroHistorial(CURP_Credito, "Préstamo", Monto_Credito);
+
   } else {
     alert("Crédito rechazado para el usuario con CURP: " + CURP_Credito);
   }
   CURP_CreditoInput.value = "";
   Monto_CreditoInput.value = "";
 });
+
+btnAcciones.addEventListener("click", function () {
+  const AccionesCURP = AccionesCURPInput.value;
+  const historialTabla = document.getElementById("historialTabla");
+
+  // Limpiamos la tabla antes de actualizarla
+  historialTabla.innerHTML = "";
+
+  AccionesHistorial.forEach((registro, index) => {
+    if (registro.CURP === AccionesCURP) {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${index + 1}</td>
+        <td>${registro.CURP}</td>
+        <td>${registro.tipoAccion}</td>
+        <td>${registro.monto}</td>
+        <td>${registro.fecha}</td>
+      `;
+      historialTabla.appendChild(row);
+    }
+  });
+});
+
+
+
+
 
 
 

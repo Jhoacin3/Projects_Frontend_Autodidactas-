@@ -158,7 +158,7 @@
                 <div class="mb-3">
                     <label for="Credito" class="form-label">Credito:</label>
                     <input type="text" class="form-control" name="Credito" id="Credito" aria-describedby="helpId"
-                        placeholder="Escriba el monto del credito" />
+                    placeholder="Escriba el monto del credito" />
                         <br>
                         <button type="button" id="btnCredito" class="btn btn-success">Solicitar Credito</button>
 
@@ -173,25 +173,26 @@
             </section>
             <section id="tab5-content" class="tab-content">
                 <h2>Historial de movimientos</h2>
+                <div class="mb-3">
+                    <label for="AccionesCURP" class="form-label">CURP:</label>
+                    <input type="text" class="form-control" name="AccionesCURP" id="AccionesCURP" aria-describedby="helpId"
+                        placeholder="Escriba su CURP para verificar usuario existente" />
+                </div>
+                <button type="button" id="btnAcciones" class="btn btn-success">Solicitar Credito</button>
+
+                <hr>
                 <table class="table">
                     <thead class="thead-dark">
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">CURP</th>
-                        <th scope="col">Abonos</th>
-                        <th scope="col">Creditos</th>
-                      </tr>
+                        <tr>
+                            <th>ID</th>
+                            <th>CURP</th>
+                            <th>Tipo de Acción</th>
+                            <th>Monto</th>
+                            <th>Fecha</th>
+                          </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Jhoacin</td>
-                        <td>20E30226UDCN</td>
-                        <td>20000</td>
-                        <td>40000</td>
-                        
-                      </tr>
+                    <tbody id="historialTabla">
+                    
                      
                     </tbody>
                   </table>
