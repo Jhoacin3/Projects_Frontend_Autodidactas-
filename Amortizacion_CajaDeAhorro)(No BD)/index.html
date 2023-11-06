@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>CAJA DE AHORRO|U4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="tabs-container">
+        <ul class="tabs">
+            <li>
+                <a id="tab1" title="Analytics" href="#tab1">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M3 3v18h18"></path>
+                        <path d="M20 18v3"></path>
+                        <path d="M16 16v5"></path>
+                        <path d="M12 13v8"></path>
+                        <path d="M8 16v5"></path>
+                        <path d="M3 11c6 0 5 -5 9 -5s3 5 9 5"></path>
+                    </svg>
+                    Registro
+                </a>
+            </li>
+            <li></li>
+            <li>
+                <a id="tab2" title="Reports" href="#tab2">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M7 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
+                        <path d="M7 3v4h4"></path>
+                        <path d="M9 17l0 4"></path>
+                        <path d="M17 14l0 7"></path>
+                        <path d="M13 13l0 8"></path>
+                        <path d="M21 12l0 9"></path>
+                    </svg>
+                    Deposito
+                </a>
+            </li>
+
+            <li>
+                <a id="tab3" title="Performance" href="#tab3">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M3 12m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+                        <path d="M9 8m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+                        <path d="M15 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+                        <path d="M4 20l14 0"></path>
+                    </svg>
+                    Retiros
+                </a>
+            </li>
+            <li>
+                <a id="tab4" title="Funds" href="#tab4">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M3 21l18 0"></path>
+                        <path d="M3 10l18 0"></path>
+                        <path d="M5 6l7 -3l7 3"></path>
+                        <path d="M4 10l0 11"></path>
+                        <path d="M20 10l0 11"></path>
+                        <path d="M8 14l0 3"></path>
+                        <path d="M12 14l0 3"></path>
+                        <path d="M16 14l0 3"></path>
+                    </svg>
+                    Creditos
+                </a>
+                <a id="tab5" title="Funds" href="#tab5">
+                    Acciones
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content-wrapper">
+            <!-- REGISTRO -->
+            <section id="tab1-content" class="tab-content">
+                <h2>Registro de usuarios</h2>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="helpId"
+                        placeholder="Escriba su nombre" />
+                </div>
+                <div class="mb-3">
+                    <label for="CURP" class="form-label">CURP:</label>
+                    <input type="text" class="form-control" name="CURP" id="CURP" aria-describedby="helpId"
+                        placeholder="Escriba su CURP" />
+                </div>
+                <div class="mb-3">
+                    <label for="abono" class="form-label">Abono:</label>
+                    <input type="number" class="form-control" name="abono" id="abono" aria-describedby="helpId"
+                        placeholder="Escriba su primer Abono" />
+                        <button type="button" id="btnAgregar" class="btn btn-success">Agregar</button>
+
+                        <div style="position: absolute; bottom: 0; left: 0; z-index: 9999;">
+                            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                <strong>ADVERTENCIA: Se requiere un mínimo de 5000 pesos para comenzar.</strong>
+                            </div>
+                        </div>                         
+                </div>
+            </section>
+
+
+            <section id="tab2-content" class="tab-content">
+                <h2>Abonar a su cuenta</h2>
+                    <div class="mb-3">
+                      <label for="AbonarCuenta" class="form-label">Abonar:</label>
+                      <input type="number"
+                        class="form-control" name="AbonarCuenta" id="AbonarCuenta" aria-describedby="helpId" placeholder="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="CURP_Abonar" class="form-label">CURP:</label>
+                        <input type="text" class="form-control" name="CURP_Abonar" id="CURP_Abonar" aria-describedby="helpId"
+                            placeholder="Escriba su CURP para verificar usuario existente" />
+                    </div>
+                    <button type="button" id="btnAbonar" class="btn btn-success">Abonar a mi cuenta</button>
+
+            </section>
+
+            <section id="tab3-content" class="tab-content">
+                <br>
+                <h2>Monto a retirar</h2>
+                <div class="mb-3">
+                    <label for="RetirarCuenta" class="form-label">Retirar:</label>
+                    <input type="text"
+                      class="form-control" name="RetirarCuenta" id="RetirarCuenta" aria-describedby="helpId" placeholder="">
+                  </div>
+                  <div class="mb-3">
+                    <label for="CURP_Retirar" class="form-label">CURP:</label>
+                    <input type="text" class="form-control" name="CURP_Retirar" id="CURP_Retirar" aria-describedby="helpId"
+                        placeholder="Escriba su CURP para verificar usuario existente" />
+                </div>
+                <button type="button" id="btnRetirar" class="btn btn-danger">Retirar a mi cuenta</button>
+            </section>
+            
+            <section id="tab4-content" class="tab-content">
+                <h2>Solicitar Credito a mi cuenta</h2>
+                <div class="mb-3">
+                    <label for="CreditoCURP" class="form-label">CURP:</label>
+                    <input type="text" class="form-control" name="CreditoCURP" id="CreditoCURP" aria-describedby="helpId"
+                        placeholder="Escriba su CURP para verificar usuario existente" />
+                </div>
+                <div class="mb-3">
+                    <label for="Credito" class="form-label">Credito:</label>
+                    <input type="text" class="form-control" name="Credito" id="Credito" aria-describedby="helpId"
+                        placeholder="Escriba el monto del credito" />
+                        <br>
+                        <button type="button" id="btnCredito" class="btn btn-success">Solicitar Credito</button>
+
+                        <div style="position: absolute; bottom: 0; left: 0; z-index: 9999;">
+                            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                <strong>ADVERTENCIA: Su credito puede ser maximo el doble de su saldo actual.</strong>
+                            </div>
+                        </div>
+                </div>
+                
+            </section>
+            <section id="tab5-content" class="tab-content">
+                <h2>Historial de movimientos</h2>
+                <table class="table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">CURP</th>
+                        <th scope="col">Abonos</th>
+                        <th scope="col">Creditos</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Jhoacin</td>
+                        <td>20E30226UDCN</td>
+                        <td>20000</td>
+                        <td>40000</td>
+                        
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+                  
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script>
+        var alertList = document.querySelectorAll(".alert");
+        alertList.forEach(function (alert) {
+            new bootstrap.Alert(alert);
+        });
+    </script>
+</body>
+
+</html>
