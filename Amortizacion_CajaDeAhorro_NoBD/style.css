@@ -29,7 +29,7 @@ body {
 	padding: 16px;
     width: 100%;
     /* AQUI */
-    max-width: 1000px;
+    max-width: 1500px;
     min-width: 1000px;
     display: flex;
 	margin: 10px;
@@ -62,7 +62,7 @@ header {
 .tab-content {
     font-size: 0.8rem;
     min-height: 300px;
-    min-width: 240px;
+    min-width: 260px;
     overflow-x: auto;
     transition: all 0.45s ease-in-out;
 }
